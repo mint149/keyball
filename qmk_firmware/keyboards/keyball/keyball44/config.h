@@ -29,11 +29,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Split parameters
 #define SOFT_SERIAL_PIN         D2
-#define SPLIT_HAND_MATRIX_GRID  F7, D4
-#define SPLIT_USB_DETECT
+// #define SPLIT_HAND_MATRIX_GRID  F7, D4
+// #define SPLIT_USB_DETECT
 #ifdef OLED_ENABLE
 #    define SPLIT_OLED_ENABLE
 #endif
+#define MASTER_LEFT
 
 // If your PC does not recognize Keyball, try setting this macro. This macro
 // increases the firmware size by 200 bytes, so it is disabled by default, but
@@ -77,3 +78,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // To squeeze firmware size
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
+
+// Automatic Mouse Layer
+#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+#define AUTO_MOUSE_DEFAULT_LAYER 5
+#define AUTO_MOUSE_TIME 1000
