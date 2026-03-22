@@ -33,6 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef OLED_ENABLE
 #    define SPLIT_OLED_ENABLE
 #endif
+#define MASTER_LEFT
 
 // If your PC does not recognize Keyball, try setting this macro. This macro
 // increases the firmware size by 200 bytes, so it is disabled by default, but
