@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 #include "quantum.h"
-// #include "os_detection.h"
+#include "os_detection.h"
 
 // レイヤー定義
 #define _WINDOWS 0
