@@ -224,6 +224,8 @@ static const char *format_4d(int8_t d) {
 }
 
 bool process_detected_host_os_user(os_variant_t os){
+	// pointing_device_init_user()でset_auto_mouse_enable()を実行してもうまく動かないので、OS検知タイミングでやってみる
+	set_auto_mouse_enable(true); 
 	currentOs = os;
     switch (os) {
         case OS_MACOS:
