@@ -44,6 +44,15 @@ jobs:
     - name: Compile and link
       run: qmk compile -j 4 -kb keyball/${{ inputs.keyboard }} -km ${{ inputs.keymap }}
 
+    - name: Rename firmware with timestamp and commit ID
+      run: |
+        TIMESTAMP=$(date +%Y%m%d%H%M%S)
+        COMMIT=$(echo "$GITHUB_SHA" | cut -c1-7)
+        for f in __qmk__/*.hex; do
+          base="${f%.hex}"
+          mv "$f" "${base}_${TIMESTAMP}_${COMMIT}.hex"
+        done
+
     - name: Archive built firmware
       uses: actions/upload-artifact@v5
       with:
